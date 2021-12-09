@@ -1,5 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import AllPosts from "./pages/AllPosts";
+import SinglePost from "./pages/SinglePost";
+import Form from "./pages/Form";
+// Import Hooks from React
+import { useState, useEffect } from "react";
+// Import Router 6 Component (Route -> Route, Switch -> Routes)
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
