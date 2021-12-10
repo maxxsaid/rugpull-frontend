@@ -59,7 +59,9 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <h1>Rugpull</h1>
+      <a href="/">
+        <h1>Rugpull</h1>
+      </a>
       <Link to="/new">
         <button>ADD</button>
       </Link>
