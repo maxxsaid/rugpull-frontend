@@ -9,24 +9,20 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const navigate = useNavigate();
+  const url = "https://rugpull.herokuapp.com/rugpull/";
+  const [posts, setPosts] = useState([]);
+  const nullRugpull = {
+    confession: "",
+    age: "",
+  };
+  const [targetRugpull, setTargetRugpull] = useState(nullRugpull);
+  const getRugpull = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    setPosts(data);
+  };
+  return <div className="App"></div>;
 }
 
 export default App;
