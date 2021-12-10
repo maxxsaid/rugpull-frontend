@@ -1,12 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
-import AllPosts from "./pages/AllPosts";
-import SinglePost from "./pages/SinglePost";
-import Form from "./pages/Form";
+import AllPosts from "./Pages/AllPosts";
+import SinglePost from "./Pages/SinglePost";
+import Form from "./Pages/Form";
 // Import Hooks from React
 import { useState, useEffect } from "react";
 // Import Router 6 Component (Route -> Route, Switch -> Routes)
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link, useNavigate } from "react-router-dom";
 
 function App() {
   const navigate = useNavigate();
@@ -22,7 +21,83 @@ function App() {
     const data = await response.json();
     setPosts(data);
   };
-  return <div className="App"></div>;
+  const addRugpull = async (newRugpull) => {
+    await fetch(url, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newRugpull),
+    });
+
+    getRugpull();
+  };
+  const getTargetRugpull = (rugpull) => {
+    setTargetRugpull(rugpull);
+    navigate("/edit");
+  };
+  const updateRugpull = async (rugpull) => {
+    await fetch(url + rugpull.id, {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(rugpull),
+    });
+    getRugpull();
+  };
+  const deleteRugpull = async (rugpull) => {
+    await fetch(url + rugpull.id, {
+      method: "delete",
+    });
+    getRugpull();
+    navigate("/");
+  };
+
+  useEffect(() => {
+    getRugpull();
+  }, []);
+  return (
+    <div className="App">
+      <h1>Rugpull</h1>
+      <Link to="/new">
+        <button>ADD</button>
+      </Link>
+      <Routes>
+        <Route path="/" element={<AllPosts posts={posts} />} />
+        <Route
+          path="/post/:id"
+          element={
+            <SinglePost
+              posts={posts}
+              edit={getTargetRugpull}
+              deleteRugpull={deleteRugpull}
+            />
+          }
+        />
+        <Route
+          path="/new"
+          element={
+            <Form
+              initialRugpull={nullRugpull}
+              handleSubmit={addRugpull}
+              buttonLabel="Create"
+            />
+          }
+        />
+        <Route
+          path="/edit"
+          element={
+            <Form
+              initialRugpull={targetRugpull}
+              handleSubmit={updateRugpull}
+              buttonLabel="Update"
+            />
+          }
+        />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
