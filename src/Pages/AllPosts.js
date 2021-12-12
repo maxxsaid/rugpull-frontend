@@ -1,9 +1,9 @@
 import React from "react";
-import Rugpull from "../Components/post";
+import Post from "../Components/post";
 
 const AllPosts = (props) => {
   return props.posts.map((post) => {
-    return <Rugpull key={post.id} post={post}></Rugpull>;
+    return <Post key={post.id} post={post}></Post>;
   });
 };
 export default AllPosts;

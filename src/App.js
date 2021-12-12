@@ -6,8 +6,29 @@ import Form from "./Pages/Form";
 import { useState, useEffect } from "react";
 // Import Router 6 Component (Route -> Route, Switch -> Routes)
 import { Route, Routes, Link, useNavigate } from "react-router-dom";
+import Modal from "./Components/modal";
 
 function App() {
+  const logo = {
+    fontSize: "5.2em",
+    padding: "40px",
+    marginTop: "20px",
+    fontFamily: "Rock Salt",
+  };
+  const slogan = {
+    fontFamily: "Architects Daughter",
+    fontSize: "1.5em"
+  };
+  const button = {
+    backgroundColor: "#2F3063",
+    fontFamily: "Architects Daughter",
+    borderRadius: "6px",
+    fontSize: "1em",
+    display: "inline-block",
+    margin: "10px 3px",
+    boxShadow: "rgba(155, 75, 200) 0px 1px 5px",
+  };
+  const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
   const url = "https://rugpull.herokuapp.com/rugpull/";
   const [posts, setPosts] = useState([]);
@@ -57,14 +78,26 @@ function App() {
   useEffect(() => {
     getRugpull();
   }, []);
+
   return (
     <div className="App">
+      {modalOpen && <Modal setOpenModal={setModalOpen} />}
       <a href="/">
-        <h1>Rugpull</h1>
+        <h1 style={logo}>Rug PuLL </h1>
       </a>
+      <p style={slogan}>Confess to me &#128521;</p>
       <Link to="/new">
-        <button>ADD</button>
+        <button style={button}>Confess</button>
       </Link>
+      <button
+        style={button}
+        className="openModalBtn"
+        onClick={() => {
+          setModalOpen(true);
+        }}
+      >
+        About
+      </button>
       <Routes>
         <Route path="/" element={<AllPosts posts={posts} />} />
         <Route

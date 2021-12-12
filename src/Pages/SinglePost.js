@@ -8,21 +8,27 @@ const SinglePost = ({ posts, edit, deleteRugpull }) => {
   console.log(post);
   const div = {
     textAlign: "center",
-    border: "2px solid #FF8682",
+    border: "1px solid rgb(254,123,191)",
+    borderRadius: "4px",
+    boxShadow: "rgba(155, 75, 200) 0px 1px 8px",
     margin: "20px auto",
-    padding: "14px",
+    padding: "25px",
     width: "80%",
-    color: "#FF8682",
+    color: "rgb(254,123,191)",
   };
   const button = {
     backgroundColor: "#2F3063",
+    fontFamily: "Architects Daughter",
+    borderRadius: "6px",
+    fontSize: "1em",
     display: "inline-block",
-    margin: "2px",
+    margin: "10px 3px",
+    boxShadow: "rgba(155, 75, 200) 0px 1px 5px",
   };
   return (
     <div style={div}>
       <h1>{post?.confession}</h1>
-      <h2>{post?.age}</h2>
+      <h2>Age: {post?.age}</h2>
       <button style={button} onClick={() => deleteRugpull(post)}>
         Delete
       </button>
