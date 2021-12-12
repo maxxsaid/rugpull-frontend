@@ -17,7 +17,7 @@ const SinglePost = ({ posts, edit, deleteRugpull }) => {
     color: "rgb(254,123,191)",
   };
   const button = {
-    backgroundColor: "#2F3063",
+    backgroundColor: "rgb(89,50,150)",
     fontFamily: "Architects Daughter",
     borderRadius: "6px",
     fontSize: "1em",

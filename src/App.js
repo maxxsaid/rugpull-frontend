@@ -10,17 +10,17 @@ import Modal from "./Components/modal";
 
 function App() {
   const logo = {
-    fontSize: "5.2em",
+    fontSize: "4em",
     padding: "40px",
     marginTop: "20px",
     fontFamily: "Rock Salt",
   };
   const slogan = {
     fontFamily: "Architects Daughter",
-    fontSize: "1.5em"
+    fontSize: "1.5em",
   };
   const button = {
-    backgroundColor: "#2F3063",
+    backgroundColor: "rgb(89,50,150)",
     fontFamily: "Architects Daughter",
     borderRadius: "6px",
     fontSize: "1em",

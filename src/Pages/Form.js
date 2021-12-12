@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const button = {
-  backgroundColor: "#2F3063",
+  backgroundColor: "rgb(89,50,150)",
   fontFamily: "Architects Daughter",
   borderRadius: "6px",
   fontSize: "1em",

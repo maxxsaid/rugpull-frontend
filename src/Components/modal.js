@@ -1,7 +1,7 @@
 import "./modal.css";
 
 const button = {
-  backgroundColor: "#2F3063",
+  backgroundColor: "rgb(89,50,150)",
   fontFamily: "Architects Daughter",
   borderRadius: "6px",
   fontSize: "1em",
@@ -14,10 +14,10 @@ const logo = {
   padding: "10px",
   marginTop: "10px",
   fontFamily: "Rock Salt",
-  
 };
 const slogan = {
-  fontSize: "1.4em",
+  fontSize: "1.1em",
+  fontFamily: "Roboto",
 };
 function Modal({ setOpenModal }) {
   return (

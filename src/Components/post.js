@@ -12,12 +12,16 @@ const Post = ({ post }) => {
     width: "80%",
     color: "rgb(254,123,191)",
   };
+  const fontSize = {
+    fontSize: "2em",
+    fontFamily: "Roboto",
+  };
   return (
     <div style={div}>
       <Link to={`/post/${post.id}`}>
-        <h1>{post.confession}</h1>
+        <h1 style={fontSize}>{post.confession}</h1>
       </Link>
-      <h2>Age: {post.age}</h2>
+      <h2 style={fontSize}>Age: {post.age}</h2>
     </div>
   );
 };
