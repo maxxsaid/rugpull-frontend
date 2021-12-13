@@ -31,4 +31,4 @@ A website where users get to anonymously write confessions. I want this website 
 
 ## Colors used
 
-![colors](colors.png)
+![colors]("public/colors.png")
