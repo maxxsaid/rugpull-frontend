@@ -28,3 +28,7 @@ A website where users get to anonymously write confessions. I want this website 
 - Masonite
 - React
 - Milligram
+
+## Colors used
+
+![colors](colors.png)
