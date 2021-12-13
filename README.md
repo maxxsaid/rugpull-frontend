@@ -7,11 +7,13 @@ A website where users get to anonymously write confessions. I want this website 
 ## Models
 
 - confession: string
-- age: number
+- age: integer
 
 ## Components
 
-- rugpull.js
+- post.js
+- modal.js
+- modal.css
 
 ## Pages
 
@@ -21,6 +23,8 @@ A website where users get to anonymously write confessions. I want this website 
   - create/add a confession
 - SinglePost.js
   - a show page of one single confession with edit/delete
+- Modal
+  - About the website
 
 ## Tech
 
@@ -28,7 +32,3 @@ A website where users get to anonymously write confessions. I want this website 
 - Masonite
 - React
 - Milligram
-
-## Colors used
-
-![colors]("public/colors.png")
